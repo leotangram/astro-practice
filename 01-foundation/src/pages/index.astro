@@ -1,0 +1,21 @@
+---
+import NavBar from '../components/NavBar.astro'
+import MainLayout from '../layouts/MainLayout.astro'
+
+// Server Only
+const name = 'Leonardo Omaña'
+---
+
+<MainLayout title="Home">
+  <h1>{name}</h1>
+  <p>Momento actual {new Date().toLocaleTimeString()}</p>
+  <p id="real-date">Momento actual real: {new Date().toLocaleTimeString()}</p>
+
+  <script>
+    const currentDate = new Date().toLocaleTimeString()
+    const realDateP = document.querySelector(
+      '#real-date'
+    ) as HTMLParagraphElement
+    realDateP.innerText = `Real current date: ${currentDate}`
+  </script>
+</MainLayout>
