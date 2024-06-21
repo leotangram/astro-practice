@@ -1,5 +1,6 @@
 ---
 // Only run this code on the server - Build time
+import Title from '@components/shared/Title.astro'
 import PokemonCard from '../components/pokemons/PokemonCard.astro'
 import type { PokemonListResponse } from '../interfaces'
 import MainLayout from '../layouts/MainLayout.astro'
@@ -11,8 +12,7 @@ const title = 'Pokémon Static | Home'
 ---
 
 <MainLayout title={title}>
-  <h1 class="text-3xl">Listado de Pókemons</h1>
-  <hr />
+  <Title>Listado de Pókemons</Title>
   <section
     role="list"
     aria-label="Listado de Pókemons"
