@@ -1,0 +1,33 @@
+---
+import { Formatter } from '../utils/formatter'
+
+interface Props {
+  title: string
+  date: Date
+  description: string
+  image: string
+}
+
+const { title, date, description, image } = Astro.props
+---
+
+<div class="lg:flex">
+  <img
+    class="object-cover w-full h-56 rounded-lg lg:w-64"
+    src={image}
+    alt={title}
+  />
+
+  <div class="flex flex-col justify-between py-6 lg:mx-6">
+    <a
+      href={'#'}
+      class="text-xl font-semibold text-gray-800 hover:underline dark:text-white"
+    >
+      {description}
+    </a>
+
+    <span class="text-sm text-gray-500 dark:text-gray-300"
+      >On: {Formatter.formatDate(date)}</span
+    >
+  </div>
+</div>
